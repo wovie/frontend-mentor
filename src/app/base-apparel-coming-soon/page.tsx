@@ -20,12 +20,12 @@ export default function Home() {
         </div>
         <div className='w-[312px] md:w-[445px] py-8 px-8 mt-4 text-center flex flex-col gap-6 lg:text-left'>
           <h1 className='text-4xl tracking-widest'>
-            <span className='block text-pink-400'>WE'RE</span>
+            <span className='block text-pink-400'>WE&apos;RE</span>
             <span className='block font-bold'>COMING</span>
             <span className='block font-bold'>SOON</span>
           </h1>
           <p className='text-pink-400 text-sm'>
-            Hello fellow shoppers! We're currently building our new fashion
+            Hello fellow shoppers! We&apos;re currently building our new fashion
             store. Add your email below to stay up-to-date with announcements
             and our launch deals.
           </p>
