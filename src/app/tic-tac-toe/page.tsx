@@ -74,7 +74,8 @@ export default function Home() {
     if (
       currentTurn !== playerMark &&
       !showModal &&
-      boardValues.some((value) => value === '')
+      boardValues.some((value) => value === '') &&
+      showGameBoard
     ) {
       const empty = boardValues
         .map((value, idx) => (value === '' ? idx : null))
@@ -91,7 +92,7 @@ export default function Home() {
   }, [currentTurn, showModal, boardValues, playerMark]);
 
   const newGameMenu = (
-    <div className='flex flex-col gap-8 justify-center items-center w-full md:w-[460px]'>
+    <div className='flex flex-col gap-8 justify-center items-center w-[340px] md:w-[460px]'>
       {logo}
       <div className='w-full p-4 bg-slate-900 rounded-xl text-slate-300 text-center shadow-2xl'>
         <div className='font-semibold'>PICK YOUR MARK</div>
@@ -156,7 +157,12 @@ export default function Home() {
   };
 
   const gameBoard = (
-    <div className='w-full md:w-[460px] grid grid-cols-3 gap-4 place-items-center'>
+    <div
+      className={
+        `w-[340px] md:w-[460px] grid grid-cols-3 gap-2 md:gap-4 place-items-center ` +
+        (showModal ? 'pointer-events-none' : '')
+      }
+    >
       <button
         className='justify-self-start cursor-pointer'
         onClick={() => setShowGameBoard(false)}
@@ -181,7 +187,7 @@ export default function Home() {
         <button
           key={idx}
           type='button'
-          className='bg-slate-900 rounded-xl w-36 h-36 shadow-lg cursor-pointer grid place-items-center'
+          className='bg-slate-900 rounded-xl w-28 h-28 md:w-36 md:h-36 shadow-lg cursor-pointer grid place-items-center'
           onClick={() => handleBoardClick(idx)}
         >
           {boardValue === 'X' ? iconX : boardValue === 'O' ? iconO : ''}
