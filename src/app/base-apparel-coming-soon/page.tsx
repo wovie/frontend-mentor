@@ -7,6 +7,7 @@ const josefinSans = Josefin_Sans({
 
 export default function Home() {
   const base = '/base-apparel-coming-soon';
+
   return (
     <main
       className={`${josefinSans.className} min-h-screen flex flex-col items-center lg:flex-row lg:items-start`}
@@ -41,8 +42,13 @@ export default function Home() {
         </div>
       </div>
       {/* Right column, desktop only */}
-      <div className='hidden lg:block w-3/5 min-h-screen relative'>
-        <Image src={`${base}/hero-desktop.jpg`} alt='Hero desktop' fill />
+      <div className='hidden lg:block w-4/5 min-h-screen relative'>
+        <Image
+          src={`${base}/hero-desktop.jpg`}
+          alt='Hero desktop'
+          fill
+          className='object-cover'
+        />
       </div>
     </main>
   );
